@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div>
+        <form action="" method="post">
+            {{ form.csrf_token() }}
+            <fieldset class="form-group">
+                <legend>Add StudentDB</legend>
+
+                <div class="form-group">
+                    {{ form.name.label(class="form-control-label") }}
+                    {% if form.name.errors %}
+                        {{ form.name(class="form-control is-invalid") }}
+                        {% for error in form.name.errors %}
+                            <div class="invalid-feedback">
+                                <span>{{ error}}</span>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {{ form.name(class="form-control") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.department.label(class="form-control-label") }}
+                    {% if form.department.errors %}
+                        {{ form.department(class="form-control is-invalid") }}
+                        {% for error in form.department.errors %}
+                            <div class="invalid-feedback">
+                                <span>{{ error}}</span>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {{ form.department(class="form-control") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.year.label(class="form-control-label") }}
+                    {% if form.year.errors %}
+                        {{ form.year(class="form-control is-invalid") }}
+                        {% for error in form.year.errors %}
+                            <div class="invalid-feedback">
+                                <span>{{ error}}</span>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {{ form.year(class="form-control") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info mt-3")}}
+
+                </div>
+            
+            </fieldset>
+        </form> 
+    </div>
+{% endblock %} 
