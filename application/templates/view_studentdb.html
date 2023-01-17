@@ -43,13 +43,17 @@
             <a href="{{ url_for('delete_stud' ,id = stud._id ) }}" class="btn btn-outline-danger btn-sm">Delete</a>
         </div>
     </div>-->
+    <script>
+        var rowdata=[]
+        rowdata.push()
+    </script>
         <tr>
           <td>{{stud.name}}</td>
           <td>{{stud.department}}</td>
           <td>{{stud.year}}</td>
-          <td class="no-border"><a href="{{ url_for('update_stud' ,id = stud._id ) }}" class="btn btn-outline-info btn-sm">Update</a></td>
+          <!-- <td class="no-border"><a href="{{ url_for('update_stud' ,id = stud._id ) }}" class="btn btn-outline-info btn-sm">Update</a></td>
         <td class="no-border"><a href="{{ url_for('delete_stud' ,id = stud._id ) }}" class="btn btn-outline-danger btn-sm">Delete</a></td>
-        
+         -->
         </tr>
         {% endfor %}
     </tbody>
@@ -59,8 +63,32 @@
         $(document).ready(function() {
           $(".tablesorter").tablesorter();
         });
-       
-      </script>
+    </script>     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+<script>
+    var columndefs =[
+        {headerName:'Name',field:'name'},
+        {headerName:'Department',field:'department'},
+        {headerName:'Year',field:'year'}
+    ];
+    
+     
+</script>
+
+<div id="mygrid" ,style="height:600px;width:500px;" class="ag-theme-balham">
+
+</div>
       
       
 {% endblock %} 
